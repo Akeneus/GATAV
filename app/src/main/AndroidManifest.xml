@@ -10,15 +10,25 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".StartupActivity">
+        <activity android:name=".StartupActivity"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".OptionsActivity"/>
-        <activity android:name=".HighScoreActivity"/>
-        <activity android:name=".MainGameActivity"/>
+        <activity
+            android:name=".MainGameActivity"
+            android:parentActivityName=".StartupActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".OptionsActivity"
+            android:parentActivityName=".StartupActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".HighScoreActivity"
+            android:parentActivityName=".StartupActivity"
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
