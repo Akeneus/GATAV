@@ -3,11 +3,15 @@ package com.example.gatavprojekt_001;
 import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
-public class MainGameActivity extends AppCompatActivity {
+import com.example.gatavprojekt_001.UserInterface_Layer.JoystickListener;
+import com.example.gatavprojekt_001.UserInterface_Layer.JoystickView;
+
+public class MainGameActivity extends AppCompatActivity implements JoystickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +21,8 @@ public class MainGameActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         configurateBackButton();
+        JoystickView joystickleft = (JoystickView) findViewById(R.id.JoystickLeft);
+        joystickleft.bringToFront();
     }
 
 
@@ -28,5 +34,21 @@ public class MainGameActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    @Override
+    public void onJoystickMoved(float xPercent, float yPercent, int id) {
+
+        switch (id){
+            case R.id.JoystickRight:
+
+                Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
+                break;
+
+            case R.id.JoystickLeft:
+
+                Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
+                break;
+        }
     }
 }
