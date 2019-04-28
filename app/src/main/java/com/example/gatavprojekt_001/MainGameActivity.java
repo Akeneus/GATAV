@@ -9,7 +9,7 @@ import android.widget.ImageView;
 public class MainGameActivity extends AppCompatActivity {
 
     private ImageView map;
-    String filename = "test1.xml";
+    final String filename = "test1.tmx";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
