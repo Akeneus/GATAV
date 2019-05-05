@@ -1,11 +1,10 @@
-package com.example.gatavprojekt_001.UserInterface_Layer;
+package com.example.gatavprojekt_001.UserInterface_Layer.Joystick;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.res.ResourcesCompat;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
@@ -14,10 +13,6 @@ import android.view.SurfaceView;
 import android.view.View;
 
 import com.example.gatavprojekt_001.R;
-
-import java.util.jar.Attributes;
-
-
 
 
 public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,View.OnTouchListener {
@@ -72,7 +67,7 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
             Canvas myCanvas = this.getHolder().lockCanvas();
             Paint colorBase = new Paint();
             Paint colorHat = new Paint();
-            myCanvas.drawColor(Color.argb(0,0,0,255),PorterDuff.Mode.CLEAR);
+            myCanvas.drawColor(Color.argb(255,0,0,0),PorterDuff.Mode.CLEAR);
             colorBase.setColor(ResourcesCompat.getColor(getResources(), R.color.HotPink,null));
             colorHat.setColor(ResourcesCompat.getColor(getResources(), R.color.Aqua,null));
             myCanvas.drawCircle(centerX,centerY,baseRadius,colorBase); //draw Base

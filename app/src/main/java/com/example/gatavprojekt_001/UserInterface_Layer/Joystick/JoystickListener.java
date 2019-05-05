@@ -1,4 +1,4 @@
-package com.example.gatavprojekt_001.UserInterface_Layer;
+package com.example.gatavprojekt_001.UserInterface_Layer.Joystick;
 
 public interface JoystickListener {
 
