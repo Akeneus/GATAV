@@ -16,7 +16,7 @@ import com.example.gatavprojekt_001.Background_Layer.MapLoader;
 
 public class MainGameActivity extends AppCompatActivity
 {
-    private static final String FILE_PATH = "maps/test1.tmx";
+    private static final String FILE_PATH = "maps/ExampleMap.tmx";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
