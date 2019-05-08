@@ -84,7 +84,7 @@ public class MapData {
 
     public String name;
     int height, width;
-    int	tileWidth, tileHeight;
+    int tileWidth, tileHeight;
     String orientation;
 
     ArrayList<TileSet> tileSets;

@@ -53,7 +53,7 @@ public class MapLoader
 
                         if(localGID == null)
                         {
-                            Log.d("GID", "read problem");
+                            Log.d("GID", "transparent");
                             Log.d("TileGrid", String.valueOf(currentGID));
                         }
 
@@ -61,14 +61,14 @@ public class MapLoader
 
                         if (localGID != null)
                         {
-                            source.top = (localGID.intValue()/((data.tileSets.get(currentTilesetIndex).imageWidth)/data.tileWidth))*data.tileHeight;
-                            source.left = (localGID.intValue()%((data.tileSets.get(currentTilesetIndex).imageWidth)/data.tileWidth))*data.tileWidth;
+                            source.top = (localGID.intValue() / ((data.tileSets.get(currentTilesetIndex).imageWidth) / data.tileWidth)) * data.tileHeight;
+                            source.left = (localGID.intValue() % ((data.tileSets.get(currentTilesetIndex).imageWidth) / data.tileWidth )) * data.tileWidth;
                             source.bottom = source.top + data.tileHeight;
                             source.right = source.left + data.tileWidth;
 
 
-                            destination.top = j*data.tileHeight;
-                            destination.left = k*data.tileWidth;
+                            destination.top = j * data.tileHeight;
+                            destination.left = k * data.tileWidth;
                             destination.bottom = destination.top + data.tileHeight;
                             destination.right = destination.left + data.tileWidth;
 

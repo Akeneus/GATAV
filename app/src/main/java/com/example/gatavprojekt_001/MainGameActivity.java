@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,7 +17,7 @@ import com.example.gatavprojekt_001.Background_Layer.MapLoader;
 
 public class MainGameActivity extends AppCompatActivity
 {
-    private static final String FILE_PATH = "maps/ExampleMap.tmx";
+    private static final String FILE_PATH = "maps/StartMap.tmx";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -32,10 +33,9 @@ public class MainGameActivity extends AppCompatActivity
 
         Bitmap mapImage = MapLoader.CreateBitmap(data, this, 0, data.layers.size());
 
-        mapImage = scaleBitmap(mapImage, this);
-
         if(mapImage != null)
         {
+            mapImage = scaleBitmap(mapImage, this);
             map.setImageBitmap(mapImage);
         }
         else
@@ -55,6 +55,9 @@ public class MainGameActivity extends AppCompatActivity
 
         int displayWidth = size.x;
         int displayHeight = size.y;
+
+        Log.i("Device Width", Integer.toString(displayWidth));
+        Log.i("Device Height", Integer.toString(displayHeight));
 
         return Bitmap.createScaledBitmap(map, displayWidth, displayHeight, true);
     }
