@@ -33,6 +33,7 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
         if(context instanceof JoystickListener){
             joystickCallback = (JoystickListener) context;
         }
+        this.bringToFront();
     }
 
     public JoystickView(Context context, AttributeSet attributes){
@@ -42,6 +43,7 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
         if(context instanceof JoystickListener){
             joystickCallback = (JoystickListener) context;
         }
+        this.bringToFront();
     }
 
     public JoystickView(Context context, AttributeSet attributes, int style){
@@ -51,13 +53,14 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
         if(context instanceof JoystickListener){
             joystickCallback = (JoystickListener) context;
         }
+        this.bringToFront();
     }
 
     private void setupDimensions(){
-        centerX = getWidth()/2;
-        centerY = getHeight()/2;
-        baseRadius = Math.min(getWidth(),getHeight())/3;
-        hatRadius = Math.min(getWidth(),getHeight())/5;
+        centerX = getWidth()/2.0F;
+        centerY = getHeight()/2.0F;
+        baseRadius = Math.min(getWidth(),getHeight())/3.0F;
+        hatRadius = Math.min(getWidth(),getHeight())/5.0F;
     }
 
     private void drawJoystick(float newX, float newY){
@@ -113,6 +116,7 @@ public class JoystickView extends SurfaceView implements SurfaceHolder.Callback,
             }
             else{
                 drawJoystick(centerX,centerY);
+                joystickCallback.onJoystickMoved(0,0,getId());
             }
         }
         return true;

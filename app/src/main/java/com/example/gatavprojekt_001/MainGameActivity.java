@@ -1,36 +1,50 @@
 package com.example.gatavprojekt_001;
 
-import android.content.Context;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
-import com.example.gatavprojekt_001.Playing_Layer.Player.Player;
+import com.example.gatavprojekt_001.Playing_Layer.Player.GameViewV2;
+import com.example.gatavprojekt_001.Playing_Layer.Player.PlayerV1;
 import com.example.gatavprojekt_001.UserInterface_Layer.HealthBar.HealthbarView;
 import com.example.gatavprojekt_001.UserInterface_Layer.Joystick.JoystickListener;
-import com.example.gatavprojekt_001.UserInterface_Layer.Joystick.JoystickView;
 
 public class MainGameActivity extends AppCompatActivity implements JoystickListener {
+
+
+    GameViewV2 gameViewV2;
+    private static float x = 0;
+    private static float y = 0;
+
+    public static float getUserinputX_1() {
+        return x;
+    }
+
+    public static float getUserinputY_1() {
+        return y;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_game);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        Player player = new Player(this);
-        HealthbarView healthbar = findViewById(R.id.Healthbar);
-        healthbar.setMaxHealth(player.getMaxHealth());
-        healthbar.setCurrentHealth(player.getCurrentHealth());
-        configurateBackButton();
-        configurateIncreaseHP(healthbar);
-        configurateDecreaseHP(healthbar);
+        // Set No Title
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        gameViewV2 = new GameViewV2(this);
+
+        //this.setContentView(gameView);
+        //this.setContentView(R.layout.activity_main_game);
+        this.setContentView(R.layout.activity_main_game_v2);
     }
+
+
 
     private void configurateBackButton(){
         Button startButton = (Button) findViewById(R.id.back_button);
@@ -71,13 +85,39 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
         switch (id){
             case R.id.JoystickRight:
 
-                Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
+               // Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
+
                 break;
 
             case R.id.JoystickLeft:
 
-                Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
+           //     Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
+
+
+                x = xPercent;
+                y = yPercent;
+
+
+
                 break;
         }
+
     }
+
+/*
+    //pausing the game when activity is paused
+    @Override
+    protected void onPause() {
+        super.onPause();
+        gameView.pause();
+    }
+
+    //running the game when activity is resumed
+    @Override
+    protected void onResume() {
+        super.onResume();
+        gameView.resume();
+    }
+*/
 }
+
