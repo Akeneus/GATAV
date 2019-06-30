@@ -13,6 +13,8 @@ public class MapData {
 
         int firstGID;
         int tileWidth, tileHeight;
+        int spacing;
+        int tileCount, columns;
 
         String imageFilename;
         int imageWidth, imageHeight;
