@@ -84,6 +84,9 @@ public class MapHandler extends DefaultHandler
                 currentTileSet.firstGID = Integer.parseInt(attributes.getValue("firstgid"));
                 currentTileSet.tileWidth = Integer.parseInt(attributes.getValue("tilewidth"));
                 currentTileSet.tileHeight = Integer.parseInt(attributes.getValue("tileheight"));
+                currentTileSet.tileCount = Integer.parseInt(attributes.getValue("tilecount"));
+                currentTileSet.columns = Integer.parseInt(attributes.getValue("columns"));
+                currentTileSet.spacing = Integer.parseInt(attributes.getValue("spacing"));
                 currentTileSet.name = attributes.getValue("name");
                 currentTileSetProperties = new HashMap<>();
             }
@@ -96,6 +99,8 @@ public class MapHandler extends DefaultHandler
                     currentTileSet.imageFilename = attributes.getValue("source");
                     currentTileSet.imageWidth = Integer.parseInt(attributes.getValue("width"));
                     currentTileSet.imageHeight = Integer.parseInt(attributes.getValue("height"));
+                    data.tileWidth = currentTileSet.imageWidth / currentTileSet.columns;
+                    data.tileHeight = currentTileSet.imageHeight / (currentTileSet.tileCount / currentTileSet.columns);
                 }
             }
             break;
