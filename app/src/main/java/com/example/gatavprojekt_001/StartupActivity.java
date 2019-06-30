@@ -1,7 +1,6 @@
 package com.example.gatavprojekt_001;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,13 +17,13 @@ public class StartupActivity extends AppCompatActivity {
         this.requestWindowFeature(Window.FEATURE_ACTION_BAR);
         setContentView(R.layout.activity_startup);
 
-        configurateStartButton();
-        configurateHighScoreButton();
-        configurateOptionsButton();
-        configurateCloseButton();
+        configureStartButton();
+        configureHighScoreButton();
+        configureOptionsButton();
+        configureCloseButton();
     }
 
-    private void configurateStartButton(){
+    private void configureStartButton(){
         Button startButton = findViewById(R.id.Start_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -34,7 +33,7 @@ public class StartupActivity extends AppCompatActivity {
         });
     }
 
-    private void configurateHighScoreButton(){
+    private void configureHighScoreButton(){
         Button startButton = findViewById(R.id.Highscore_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -44,7 +43,7 @@ public class StartupActivity extends AppCompatActivity {
         });
     }
 
-    private void configurateOptionsButton(){
+    private void configureOptionsButton(){
         Button startButton = findViewById(R.id.Options_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -54,7 +53,7 @@ public class StartupActivity extends AppCompatActivity {
         });
     }
 
-    private void configurateCloseButton(){
+    private void configureCloseButton(){
         Button startButton = findViewById(R.id.Beenden_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
