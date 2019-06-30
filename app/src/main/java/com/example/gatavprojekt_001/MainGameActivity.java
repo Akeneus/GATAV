@@ -8,6 +8,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 
+import com.example.gatavprojekt_001.Playing_Layer.Player.GameContent;
 import com.example.gatavprojekt_001.Playing_Layer.Player.GameViewV2;
 import com.example.gatavprojekt_001.Playing_Layer.Player.PlayerV1;
 import com.example.gatavprojekt_001.UserInterface_Layer.HealthBar.HealthbarView;
@@ -20,6 +21,9 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
     private static float x = 0;
     private static float y = 0;
 
+    private static float x2 = 0;
+    private static float y2 = 0;
+
     public static float getUserinputX_1() {
         return x;
     }
@@ -27,6 +31,11 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
     public static float getUserinputY_1() {
         return y;
     }
+
+
+    public static float getUserinputX_2() {return x2;}
+
+    public static float getUserinputY_2() {return y2;}
 
 
     @Override
@@ -87,6 +96,8 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
 
                // Log.d("MainGameActivity","X percent:"+xPercent+" Y percent: "+ yPercent);
 
+                x2 = xPercent;
+                y2 = yPercent;
                 break;
 
             case R.id.JoystickLeft:

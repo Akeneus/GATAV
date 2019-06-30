@@ -155,15 +155,14 @@ public class GameViewV2 extends SurfaceView implements SurfaceHolder.Callback, R
 
             surfaceHolder.unlockCanvasAndPost(canvas);
 
-            Log.d("GameViewV2","check gameContent null: " + (gameContent == null));
+          //  Log.d("GameViewV2","check gameContent null: " + (gameContent == null));
         }
     }
 
     private void updateGraphics(Canvas canvas) {
         // Layer 0 (clear background)
 
-
-        canvas.drawColor(getResources().getColor(R.color.red));
+           canvas.drawColor(getResources().getColor(R.color.red));
         // Layer 1 (Game content)
        // Log.d("GameViewV2","check gameContent null: " + (gameContent == null));
         if(gameContent == null) return;;

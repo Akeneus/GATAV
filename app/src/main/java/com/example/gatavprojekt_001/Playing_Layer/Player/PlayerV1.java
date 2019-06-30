@@ -25,6 +25,7 @@ public class PlayerV1 {
     private float currentHealth;
     private Context context;
     private float x;
+    private long atkSpeed;
     private float speedfactor;
 
     private float y;
@@ -41,6 +42,7 @@ public class PlayerV1 {
         speedfactor = 5;
         x = centerX;
         y = centerY;
+        atkSpeed = 1000;
     }
 
 
@@ -94,6 +96,7 @@ public class PlayerV1 {
     public void update(){
         x = x + MainGameActivity.getUserinputX_1()*speedfactor;
         y = y + MainGameActivity.getUserinputY_1()*speedfactor;
+
     }
 
 
@@ -101,7 +104,11 @@ public class PlayerV1 {
 
     public void draw(Canvas canvas) {
         Paint colorBase = new Paint();
-        colorBase.setColor(context.getResources().getColor(R.color.Black));
+        colorBase.setColor(context.getResources().getColor(R.color.Green));
         canvas.drawCircle(x,y,50,colorBase);
+    }
+
+    public long getatkSpeed() {
+        return atkSpeed;
     }
 }
