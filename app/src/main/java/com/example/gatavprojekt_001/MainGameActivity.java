@@ -21,22 +21,23 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
     private static float x2 = 0;
     private static float y2 = 0;
 
-    public static float getUserinputX_1() {
+    public static float getUserInputX_1() {
         return x;
     }
 
-    public static float getUserinputY_1() {
+    public static float getUserInputY_1() {
         return y;
     }
 
 
-    public static float getUserinputX_2() {return x2;}
+    public static float getUserInputX_2() {return x2;}
 
-    public static float getUserinputY_2() {return y2;}
+    public static float getUserInputY_2() {return y2;}
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -50,7 +51,6 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
         //this.setContentView(R.layout.activity_main_game);
         this.setContentView(R.layout.activity_main_game_v2);
     }
-
 
     private void configurateBackButton(){
         Button startButton = findViewById(R.id.back_button);

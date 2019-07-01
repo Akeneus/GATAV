@@ -3,14 +3,10 @@ package com.example.gatavprojekt_001.Playing_Layer.Player;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.Log;
-
 import com.example.gatavprojekt_001.MainGameActivity;
 import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.Drawable;
 import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.Shot;
-
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -31,8 +27,8 @@ public class GameContent implements Drawable {
     private Runnable drawbullet = new Runnable() {
         @Override
         public void run() {
-            float inputX = MainGameActivity.getUserinputX_2();
-            float inputY = MainGameActivity.getUserinputY_2();
+            float inputX = MainGameActivity.getUserInputX_2();
+            float inputY = MainGameActivity.getUserInputY_2();
             Log.d("test123414214", "inpoutX =>"+inputX+" inpoutY =>"+inputY);
             if(inputX !=0 || inputY!=0){
                     addBullet(inputX, inputY);

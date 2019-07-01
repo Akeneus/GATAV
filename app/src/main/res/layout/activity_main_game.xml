@@ -1,15 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainGameActivity">
 
-    <ImageView
-        android:id="@+id/Map"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/content_description"
-        app:srcCompat="@color/Black" />
-</FrameLayout>
+        android:layout_height="match_parent">
+
+        <com.example.gatavprojekt_001.Playing_Layer.Player.GameViewV2
+            android:id="@+id/myGameView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.example.gatavprojekt_001.UserInterface_Layer.Joystick.JoystickView
+                android:id="@+id/JoystickRight"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:background="@android:color/transparent" />
+
+            <com.example.gatavprojekt_001.UserInterface_Layer.Joystick.JoystickView
+                android:id="@+id/JoystickLeft"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentBottom="true" />
+
+
+            <com.example.gatavprojekt_001.UserInterface_Layer.HealthBar.HealthbarView
+                android:id="@+id/Healthbar"
+                android:layout_width="320dp"
+                android:layout_height="25dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true" />
+
+            <Button
+                android:id="@+id/back_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="@string/back_button" />
+
+            <Button
+                android:id="@+id/increaseHP_test_button"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toStartOf="@+id/decreaseHP_test_button"
+                android:layout_toLeftOf="@+id/decreaseHP_test_button"
+                android:text="@string/increaseHP" />
+
+            <Button
+                android:id="@+id/decreaseHP_test_button"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toStartOf="@+id/back_button"
+                android:layout_toLeftOf="@+id/back_button"
+                android:text="@string/decreaseHP" />
+
+
+        </RelativeLayout>
+
+    </FrameLayout>
+</android.support.constraint.ConstraintLayout>
+
+

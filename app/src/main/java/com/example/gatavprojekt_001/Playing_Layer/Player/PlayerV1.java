@@ -48,7 +48,7 @@ public class PlayerV1 {
 
 
 
-    public float getX() {
+    float getX() {
         return x;
     }
 
@@ -57,7 +57,7 @@ public class PlayerV1 {
     }
 
 
-    public float getY() {
+    float getY() {
         return y;
     }
 
@@ -94,8 +94,8 @@ public class PlayerV1 {
 
 
     void update(){
-        x = x + MainGameActivity.getUserinputX_1()*speedfactor;
-        y = y + MainGameActivity.getUserinputY_1()*speedfactor;
+        x = x + MainGameActivity.getUserInputX_1()*speedfactor;
+        y = y + MainGameActivity.getUserInputY_1()*speedfactor;
 
     }
 
