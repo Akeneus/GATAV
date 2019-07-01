@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.Button;
+
 import com.example.gatavprojekt_001.Playing_Layer.Player.GameViewV2;
 import com.example.gatavprojekt_001.UserInterface_Layer.HealthBar.HealthbarView;
 import com.example.gatavprojekt_001.UserInterface_Layer.Joystick.JoystickListener;
@@ -51,6 +53,8 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
         //this.setContentView(R.layout.activity_main_game);
         this.setContentView(R.layout.activity_main_game_v2);
     }
+
+
 
     private void configurateBackButton(){
         Button startButton = findViewById(R.id.back_button);

@@ -3,14 +3,12 @@ package com.example.gatavprojekt_001.Playing_Layer.Player.drawable;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
 
-import com.example.gatavprojekt_001.MainGameActivity;
-import com.example.gatavprojekt_001.Playing_Layer.Player.PlayerV1;
 import com.example.gatavprojekt_001.R;
 
 public class Shot implements Drawable {
 
+    private final float bulletSize;
     private float x;
     private float y;
 
@@ -32,21 +30,22 @@ public class Shot implements Drawable {
         this.context = context;
         x =  initPositionX;
         y =  initPositionY;
-        isActive = false;
+        isActive = true;
         bulletSpeed = 10;
         InputX = 1;
         InputY = 1;
         inBounds = true;
+        bulletSize = 10;
     }
 
 
     @Override
     public void draw(Canvas canvas) {
-
-
+        if(isActive){
             Paint colorBase = new Paint();
             colorBase.setColor(context.getResources().getColor(R.color.Yellow));
-            canvas.drawCircle(x,y,10,colorBase);
+            canvas.drawCircle(x,y,bulletSize,colorBase);
+        }
     }
 
     @Override
@@ -114,5 +113,9 @@ public class Shot implements Drawable {
 
     public void setInBounds(boolean inBounds) {
         this.inBounds = inBounds;
+    }
+
+    public float getRad() {
+        return bulletSize;
     }
 }
