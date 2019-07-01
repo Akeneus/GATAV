@@ -6,13 +6,11 @@ import android.util.Log;
 
 import com.example.gatavprojekt_001.MainGameActivity;
 import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.Drawable;
-import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.Player;
+import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.PlayerV1;
 import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.Shot;
 import com.example.gatavprojekt_001.Playing_Layer.Player.drawable.Wall;
 
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;

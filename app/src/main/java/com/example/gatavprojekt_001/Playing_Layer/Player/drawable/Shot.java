@@ -3,10 +3,7 @@ package com.example.gatavprojekt_001.Playing_Layer.Player.drawable;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.util.Log;
 
-import com.example.gatavprojekt_001.MainGameActivity;
-import com.example.gatavprojekt_001.Playing_Layer.Player.PlayerV1;
 import com.example.gatavprojekt_001.R;
 
 public class Shot implements Drawable {

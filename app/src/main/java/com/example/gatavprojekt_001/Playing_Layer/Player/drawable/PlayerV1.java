@@ -1,4 +1,4 @@
-package com.example.gatavprojekt_001.Playing_Layer.Player;
+package com.example.gatavprojekt_001.Playing_Layer.Player.drawable;
 
 import android.content.Context;
 import android.graphics.Canvas;
