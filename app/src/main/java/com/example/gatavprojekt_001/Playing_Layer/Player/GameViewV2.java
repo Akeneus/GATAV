@@ -163,6 +163,9 @@ public class GameViewV2 extends SurfaceView implements SurfaceHolder.Callback, R
         // Layer 0 (clear background)
 
            canvas.drawColor(getResources().getColor(R.color.red));
+           // Hier kommt deine lustige bitmap hin
+
+
         // Layer 1 (Game content)
        // Log.d("GameViewV2","check gameContent null: " + (gameContent == null));
         if(gameContent == null) return;;

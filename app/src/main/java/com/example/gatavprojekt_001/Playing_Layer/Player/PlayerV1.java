@@ -29,6 +29,11 @@ public class PlayerV1 {
     private float speedfactor;
 
     private float y;
+    private boolean canMoveUp = true;
+    private boolean canMoveDown = true;
+    private boolean canMoveLeft = true;
+    private boolean canMoveRight = true;
+
 
     //motion speed of the character
 
@@ -39,7 +44,7 @@ public class PlayerV1 {
         setMaxHealth(200);
         setCurrentHealth(100);
         playerBaseRadius = 75;
-        speedfactor = 5;
+        speedfactor = 10;
         x = centerX;
         y = centerY;
         atkSpeed = 1000;
@@ -94,8 +99,38 @@ public class PlayerV1 {
 
 
     public void update(){
-        x = x + MainGameActivity.getUserinputX_1()*speedfactor;
-        y = y + MainGameActivity.getUserinputY_1()*speedfactor;
+
+        if(MainGameActivity.getUserinputX_1() > 0){
+
+            if(canMoveRight){
+                x = x + MainGameActivity.getUserinputX_1()*speedfactor;
+               Log.d("PLayerV1", "canMoveRight: "+canMoveRight);
+            }
+        }
+
+        if(MainGameActivity.getUserinputX_1() < 0){
+
+            if(canMoveLeft){
+                x = x + MainGameActivity.getUserinputX_1()*speedfactor;
+                Log.d("PLayerV1", "canMoveLeft: "+canMoveLeft);
+            }
+        }
+
+        if(MainGameActivity.getUserinputY_1() < 0){
+
+            if(canMoveUp){
+                y = y + MainGameActivity.getUserinputY_1()*speedfactor;
+                Log.d("PLayerV1", "canMoveUp: "+canMoveUp);
+            }
+        }
+
+        if(MainGameActivity.getUserinputY_1() > 0){
+            if(canMoveDown){
+                y = y + MainGameActivity.getUserinputY_1()*speedfactor;
+                Log.d("PLayerV1", "canMoveDown: "+canMoveDown);
+            }
+        }
+
 
     }
 
@@ -110,5 +145,25 @@ public class PlayerV1 {
 
     public long getatkSpeed() {
         return atkSpeed;
+    }
+
+    public float getRad() {
+        return playerBaseRadius;
+    }
+
+    public void setCanMoveDown(boolean cantMoveDown) {
+        this.canMoveDown = cantMoveDown;
+    }
+
+    public void setCanMoveLeft(boolean cantMoveLeft) {
+        this.canMoveLeft = cantMoveLeft;
+    }
+
+    public void setCanMoveRight(boolean cantMoveRight) {
+        this.canMoveRight = cantMoveRight;
+    }
+
+    public void setCanMoveUP(boolean cantMoveUP) {
+        this.canMoveUp = cantMoveUP;
     }
 }
