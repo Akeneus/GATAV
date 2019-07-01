@@ -7,8 +7,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.Button;
-
 import com.example.gatavprojekt_001.Playing_Layer.Player.GameViewV2;
 import com.example.gatavprojekt_001.UserInterface_Layer.HealthBar.HealthbarView;
 import com.example.gatavprojekt_001.UserInterface_Layer.Joystick.JoystickListener;
@@ -44,7 +42,7 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
 
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
-        //configurateBackButton();
+        //configureBackButton();
 
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         gameViewV2 = new GameViewV2(this);
@@ -56,7 +54,7 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
 
 
 
-    private void configurateBackButton(){
+    private void configureBackButton(){
         Button startButton = findViewById(R.id.back_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -67,7 +65,7 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
     }
 
 
-    private void configurateIncreaseHP(final HealthbarView healthbar){
+    private void configureIncreaseHP(final HealthbarView healthbar){
         Button startButton = findViewById(R.id.increaseHP_test_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -78,7 +76,7 @@ public class MainGameActivity extends AppCompatActivity implements JoystickListe
     }
 
 
-    private void configurateDecreaseHP(final HealthbarView healthbar){
+    private void configureDecreaseHP(final HealthbarView healthbar){
         Button startButton = findViewById(R.id.decreaseHP_test_button);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
