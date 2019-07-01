@@ -86,7 +86,7 @@ public class MapHandler extends DefaultHandler
                 currentTileSet.tileHeight = Integer.parseInt(attributes.getValue("tileheight"));
                 currentTileSet.tileCount = Integer.parseInt(attributes.getValue("tilecount"));
                 currentTileSet.columns = Integer.parseInt(attributes.getValue("columns"));
-                currentTileSet.spacing = Integer.parseInt(attributes.getValue("spacing"));
+                //currentTileSet.spacing = Integer.parseInt(attributes.getValue("spacing"));
                 currentTileSet.name = attributes.getValue("name");
                 currentTileSetProperties = new HashMap<>();
             }
